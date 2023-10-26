@@ -20,15 +20,15 @@ import (
 )
 
 var (
-	AppName     = "pmsg"    // 名称
-	Version     = "dev"     // 版本
-	BuildCommit = "none"    // git commit
-	BuildTime   = "unknown" // 编译时间
+	AppName     = "pmsg"             // 名称
+	Version     = "0.5.0"            // 版本
+	BuildCommit = "latest"           // git commit
+	BuildTime   = "2023-20-26 15:55" // 编译时间
 
 	OpenSource = "https://github.com/lenye/pmsg" // 开发人
 )
 
-const versionTemplate = `%s
+const versionTemplate = `  %s
   Version:     %s
   Commit:      %s
   Built:       %s

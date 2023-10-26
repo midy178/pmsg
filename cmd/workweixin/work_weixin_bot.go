@@ -16,12 +16,11 @@ package workweixin
 
 import (
 	"fmt"
-
-	"github.com/spf13/cobra"
-
 	"github.com/lenye/pmsg/cmd/variable"
 	"github.com/lenye/pmsg/internal/flags"
 	"github.com/lenye/pmsg/internal/im/weixin/work/bot"
+	"github.com/spf13/cobra"
+	"strings"
 )
 
 // botCmd 企业微信群机器人
@@ -36,7 +35,9 @@ var botCmd = &cobra.Command{
 			MsgType:   variable.MsgType,
 			AtUser:    variable.AtUser,
 			AtMobile:  variable.AtMobile,
-			Data:      args[0],
+			//Data:      args[0],
+			// Restore newline character
+			Data: strings.ReplaceAll(args[0], "\\\\n", "\n"),
 		}
 		if err := bot.CmdSend(&arg); err != nil {
 			fmt.Println(err)
